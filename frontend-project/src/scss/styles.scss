@@ -1,0 +1,139 @@
+// Core
+@import "core/variables";
+@import "core/mixins";
+@import "core/misc";
+
+// Views
+@import 'views/dashboard';
+@import 'views/general';
+
+// Components
+@import 'components/loadingBlock';
+@import 'components/badge';
+
+// Utils
+$colors: (lime: $lime-a700, purple: $purple-a700, light-blue: $light-blue-a700, 
+teal: $teal-a700, red: $red-a400, blue: $blue-a200, orange: #ffb83e, white: white, black-text: #3c4858, dark-red: #b40000, dark-orange: #f79900, soft-black: rgba(0, 0, 0, 0.87), sweet-green: #2cb400);
+$sizes: (xs: 5px, sm: 10px, md: 15px, lg: 20px);
+$sides: (top, right, bottom, left);
+
+@mixin navigation-color($color1) {
+  &:hover {
+    border-bottom: 3px solid $color1 !important;
+    .material-icons, svg {
+      color: $color1 !important;
+    }
+  }
+}
+
+@each $key in $sides {
+  .align-#{$key} {
+    text-align: $key
+  }
+}
+
+@each $key, $value in $colors {
+  .navigation-#{$key} {
+    @include navigation-color($value);
+  }
+  .color-#{$key} {
+    color: $value !important;
+  }
+  .button-#{$key} {
+    color: $white !important;
+    background: $value !important;
+  }
+  .light-button-#{$key} {
+    color: $value !important;
+  }
+  .text-field-#{$key} {
+    .MuiInput-underline:after {
+      border-bottom-color: $value !important;
+    }
+    .MuiInput-underline:before {
+      border-bottom-color: $grey-400 !important;
+    }
+  }
+}
+
+@each $key, $value in $sizes {
+  .padding-#{$key} {
+    padding: $value !important;
+  }
+  .margin-#{$key} {
+    margin: $value !important;
+  }
+  @each $side in $sides {
+    .padding-#{$side}-#{$key} {
+      padding-#{$side}: $value !important;
+    }
+    .margin-#{$side}-#{$key} {
+      margin-#{$side}: $value !important;
+    }
+  }
+}
+
+.button-text-simple {
+  text-transform: none !important;
+  font-weight: 400 !important;
+}
+
+.pull-left {
+  float: left
+}
+
+.pull-right {
+  float: right
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.no-margin {
+  margin: 0px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.hide {
+  position: absolute;
+  top: -10000px;
+  left: -10000px;
+  opacity: 0;
+}
+
+.page-background {
+  min-height: 100vh;
+  background-color: #2e3236;
+}
+
+.page-container {
+  background-color: #ececec;
+  border-radius: 0px 0px 5px 5px;
+  box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 1px 10px 0px rgba(0,0,0,0.12);
+  padding: 32px;
+}
+
+.center-content{
+  display: flex !important;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.right-icon{
+  margin-left: 10px;
+}
+.left-icon{
+  margin-right: 10px;
+}
+
+.visible-false {
+  visibility: hidden;
+}
+
+.pointer {
+  cursor: pointer;
+}

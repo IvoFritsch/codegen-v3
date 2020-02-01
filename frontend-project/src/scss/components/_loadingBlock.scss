@@ -1,0 +1,29 @@
+.loading-block-container {
+  border-radius: 2px;
+  background: $grey-200;
+  @include shadow-1dp;
+  overflow: hidden;
+  position: relative;
+}
+
+.block-container-shadow-background {
+  animation-name: block-container-shadow-background;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-duration: 3s;
+  transform: rotate(10deg);
+  background: $grey-a100;
+  width: 80%;
+  height: 300%;
+  position: absolute;
+  top: -50%;
+}
+
+@keyframes block-container-shadow-background {
+  from {
+    right: -200%;
+  }
+  to {
+    right: 200%;
+  }
+}

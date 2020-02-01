@@ -1,0 +1,14 @@
+.badge-container {
+  display: inline-block;
+  padding: 3px 4px 3px 10px;
+  @include shadow-1dp;
+  border-radius: 3px;
+}
+
+.badge-close-button {
+  margin-left: 5px !important;
+  padding: 7px !important;
+  span {
+    font-size: 19px;
+  }
+}

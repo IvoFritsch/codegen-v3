@@ -1,0 +1,151 @@
+$navigationWidth: 70px;
+$navigationFontSize: 30px;
+
+.dashboard-container {
+  display: flex;
+  flex: 1;
+  height: 100%;
+}
+
+.navigation-container {
+  width: $navigationWidth;
+  @include shadow-2dp;
+  display: flex;
+  flex-direction: column;
+  background: $grey-900;
+}
+
+.navigation-box {
+  height: $navigationWidth;
+  border-radius: 0px !important;
+  color: $grey-500 !important;
+}
+
+.navigation-fontSize {
+  font-size: $navigationFontSize !important;
+}
+
+.dashboard-pages-container {
+  flex: 1;
+  overflow: auto;
+}
+
+.dashboard-pages-title {
+  span, svg {
+    position: relative;
+    top: 3px;
+  }
+}
+
+.dashboard-pages-description {
+  padding-top: 5px;
+}
+
+.dashboard-pages-header {
+  padding: 12px;
+  background: $white;
+  border-bottom: 1px solid $grey-300;
+}
+
+.dashboard-loading-blocks-container {
+  padding: 15px;
+}
+
+.robot-icon-message {
+  color: $white;
+  font-size: 100px;
+}
+
+.robot-icon-container {
+  background: $teal-a700;
+  display: inline-block;
+  border-radius: 50%;
+  padding: 20px;
+}
+
+.no-robot-message-container {
+  margin-top: 10%;
+  padding: 0px 15px;
+}
+
+.default-background {
+  background: $white;
+  height: 100%;
+}
+
+.robots-no-robots-paper {
+  padding: 20px;
+  text-align: center;
+}
+
+.robots-badge-symbols {
+  color: $grey-900;
+  margin-right: 8px;
+  margin-bottom: 8px;
+}
+
+.robots-name-container {
+  .name {
+    color: $grey-800;
+    font-size: 22px;
+  }
+  .details {
+    color: $grey-700;
+    font-size: 16px;
+    margin-right: 10px;
+  }
+}
+
+.robots-sub-container {
+  margin-top: 3px;
+  .sub {
+    color: $grey-800;
+    font-size: 19px;
+    margin-left: 16px;
+  }
+  button {
+    margin-left: 8px;
+    span {
+      font-size: 21px;
+    }
+  }
+}
+
+.light {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  position: relative;
+  top: -3px;
+}
+
+.light-on {
+  background-color: $green-a700;
+}
+
+.new-robot-button-container {
+  width: 100%;
+  height: 40px;
+  position: relative;
+  button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+  }
+}
+
+.create-strategy-container {
+  margin-left: 15px;
+  margin-bottom: 10px;
+  display: inline-block;
+  border-radius: 5px;
+  background: $grey-a100;
+  padding: 20px;
+  text-align: center;
+  p {
+    margin-bottom: 15px;
+    font-size: 15px;
+    font-weight: 400;
+  }
+}
