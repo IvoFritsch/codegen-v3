@@ -83,8 +83,7 @@ export class ProcessModels extends Component {
     // console.log(data);
     this.setState({ processing: true });
     apiSend('processaTemplate', data).then(res => {
-      console.log(res);
-      this.setState({ processing: false, processResult: res });
+      this.setState({ processing: false, processResult: res});
      });
 
   }
@@ -147,13 +146,13 @@ export class ProcessModels extends Component {
                   {this.state.processResult &&
                     <Card>
                       <CardContent>
-                        {this.state.processResult && Object.keys(this.state.processResult.modelsHasMessages).map( (m, index) => 
+                        {this.state.processResult && Object.keys(this.state.processResult.mensagens).map( (m, index) => 
                           <div key={index} >
                             <div className={'center-content pointer'} style={{justifyContent: 'unset'}} onClick={() => this.state.openMessages === m ? this.setState({ openMessages: undefined }) : this.setState({ openMessages: m })}>
                               <Icon className={this.state.processResult.modelsHasMessages[m] ? 'color-dark-red' : 'color-sweet-green'}>{this.state.processResult.modelsHasMessages[m] ? 'clear' : 'done'}</Icon>
                               <Typography style={{marginLeft: '8px'}}>{m}</Typography>
                             </div>
-                            {this.state.processResult.modelsHasMessages[m] && (this.state.openMessages === m) &&
+                            {this.state.processResult.mensagens[m] && (this.state.openMessages === m) &&
                               <Table size="small">
                                 <TableBody>
                                   {Object.keys(this.state.processResult.mensagens[m]).map( (mm, indexmm) => 
